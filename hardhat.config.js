@@ -40,64 +40,6 @@ task("create-nft-collection", "create a new NFT collection")
       factoryInfo.name,
       factoryInfo.address
     );
-
-    // const tx = await factory.updatePlatformFee(hre.ethers.utils.parseEther("0.1"));
-    // const receipt = await tx.wait();
-    // console.log("Platform Fee Changed:", receipt);
-
-    // const platformFee = await factory.platformFee();
-    // console.log("Platform fee: ", hre.ethers.utils.formatEther(platformFee));
-
-    const tx = await factory.createNFTContract("Shrek", "SHRK", {
-      value: hre.ethers.utils.parseEther("0.1")
-    });
-    const receipt = await tx.wait();
-    console.log("NFT contract deployed to:", receipt);
-
-    // const { ethers } = hre;
-    // const [deployer] = await ethers.getSigners();
-    // const signer = deployer; // for simplicity
-    // console.log("Deploying contracts with the account:", deployer.address);
-    // console.log("Account balance:", (await deployer.getBalance()).toString());
-    // console.log("Signer address:", signer.address);
-
-    // const transactionCount = await deployer.getTransactionCount();
-    // const airdropDeployedAddress = getContractAddress({
-    //   from: deployer.address,
-    //   nonce: transactionCount + 1, //add 1 to the nonce to get the address of the airdrop contract since it will be deployed after the ParaToken contract
-    // });
-
-    // const ParaToken = await ethers.getContractFactory("ParaToken");
-    // const paraToken = await ParaToken.deploy(
-    //   "Para Token",
-    //   "para",
-    //   airdropDeployedAddress
-    // );
-    // console.log("ParaToken deployed to:", paraToken.address);
-
-    // const authorizedMerkleClaimant = {
-    //   claimer: taskArgs.merkleClaimAddress,
-    //   amount: ethers.utils.parseUnits(taskArgs.merkleClaimAmount, 18),
-    // };
-    // const merkleTree = generateMerkleTree([authorizedMerkleClaimant]);
-    // const merkleRoot = merkleTree.getHexRoot();
-    // console.log(
-    //   "Merkle root:",
-    //   merkleRoot,
-    //   " calculated for claimant: ",
-    //   authorizedMerkleClaimant.claimer,
-    //   " with amount: ",
-    //   authorizedMerkleClaimant.amount.toString(),
-    //   " in wei"
-    // );
-
-    // const Airdrop = await ethers.getContractFactory("Airdrop");
-    // const airdrop = await Airdrop.deploy(
-    //   merkleRoot,
-    //   signer.address,
-    //   paraToken.address
-    // );
-    // console.log("Airdrop deployed to:", airdrop.address);
   });
 
 module.exports = {
@@ -135,6 +77,6 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: "46DD6NK19R2AZQQIJIY1FXR85HKM2XSNBE",
+    apiKey: "",
   },
 };
